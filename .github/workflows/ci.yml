@@ -13,6 +13,6 @@ jobs:
       - name: Install jq
         run: sudo apt-get update && sudo apt-get install -y jq
       - name: Unit tests
-        run: pip install pytest && python3 -m pytest -q tests
+        run: pip install pytest && PYTHONDONTWRITEBYTECODE=1 python3 -m pytest -q tests -p no:cacheprovider
       - name: Smoke test
         run: ./tests/smoke.sh
