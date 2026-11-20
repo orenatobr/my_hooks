@@ -25,3 +25,8 @@ This project does not publish versioned releases yet, so entries live under
 - `AGENTS.md`, `CLAUDE.md` and `docs/my_hooks.md` with install steps and
   design notes.
 - `CHANGELOG.md`.
+
+### Fixed
+
+- CI unit-test step no longer writes `__pycache__` into `scripts/`, which broke the
+  installer in the smoke step.
