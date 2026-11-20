@@ -1,0 +1,6 @@
+{
+  "hooks": {},
+  "env": {
+    "CLAUDE_CODE_PLUGIN_DIRS": "$HOME/.claude/mods/git-diff-on-start"
+  }
+}
