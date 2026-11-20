@@ -11,7 +11,8 @@ fail() { echo "FAIL: $*" >&2; exit 1; }
 s="$HOME/.claude/settings.json"
 jq empty "$s" || fail "settings.json invalid"
 [ "$(jq -r .theme "$s")" = dark ] || fail "existing keys were not preserved"
-[ "$(jq '.hooks.Stop | length' "$s")" = 3 ] || fail "Stop should hold the original plus 2 new groups"
+[ "$(jq '.hooks.Stop | length' "$s")" = 4 ] || fail "Stop should hold the original plus 3 new groups"
+[ "$(jq '[.hooks.PreToolUse[].hooks[].command | select(endswith("goal_skills_gate.py pretool"))] | length' "$s")" = 1 ] || fail "goal_skills_gate pretool hook not registered once"
 sha1="$(shasum "$s" | cut -d' ' -f1)"
 "$REPO/install.sh" --with-iterm --with-mod >/dev/null
 [ "$(shasum "$s" | cut -d' ' -f1)" = "$sha1" ] || fail "second install changed settings.json (not idempotent)"

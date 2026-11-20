@@ -14,6 +14,15 @@
     ],
     "PreToolUse": [
       {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/scripts/goal_skills_gate.py pretool",
+            "timeout": 10
+          }
+        ]
+      },
+      {
         "matcher": "Bash|mcp__plugin_github_github__create_pull_request|mcp__plugin_github_github__update_pull_request",
         "hooks": [
           {
@@ -58,6 +67,15 @@
       }
     ],
     "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/scripts/goal_skills_gate.py stop",
+            "timeout": 10
+          }
+        ]
+      },
       {
         "hooks": [
           {
