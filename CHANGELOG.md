@@ -10,6 +10,10 @@ This project does not publish versioned releases yet, so entries live under
 
 ### Added
 
+- `goal_skills_gate.py`, a PreToolUse and Stop hook that makes a `/goal` turn load
+  its six skills through the Skill tool before anything else, checked against
+  the transcript instead of trusting the model (4 blocks per turn, then it
+  lets go).
 - en-US Claude Code hooks (Stop, goal start trigger, quality gate, LLM judge,
   PR lint) in `scripts/`.
 - Skills written for these hooks in `skills/`.

@@ -7,6 +7,7 @@ What you get:
 | Event | Hook | What it does |
 |---|---|---|
 | UserPromptSubmit | `goal-start-trigger.sh` | On `/goal`, loads six skills, the Karpathy guidelines, graphify context and your Obsidian `MEMORY.md` |
+| PreToolUse, Stop | `goal_skills_gate.py` | On a `/goal` turn, denies every tool except `Skill` (and blocks the stop) until the six skills were loaded through the Skill tool |
 | SessionStart | `karpathy-guidelines-hook.sh` | Injects the Karpathy coding guidelines as context |
 | SessionStart | `graphify-autobuild-hook.sh` | Indexes a git repo in the background and points the model at `/graphify` |
 | PreToolUse | `pr-gate-pretool.py` | Blocks commits, pushes and PRs that break `/git-guidelines` |

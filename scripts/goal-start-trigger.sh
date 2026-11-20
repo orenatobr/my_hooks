@@ -86,7 +86,7 @@ else
   add_line "Obsidian vault: no $folder/MEMORY.md, nothing to read"
 fi
 
-instr='REQUIRED: before any other action, call the Skill tool once for each of: andrej-karpathy-skills:karpathy-guidelines, graphify, humanizer, attack-protection, programming-best-practices, git-guidelines. The user checks the native notice "Skill(...) Successfully loaded skill". Do not write that notice as text.'
+instr='REQUIRED: before any other action, call the Skill tool once for each of: andrej-karpathy-skills:karpathy-guidelines, graphify, humanizer, attack-protection, programming-best-practices, git-guidelines. The user checks the native notice "Skill(...) Successfully loaded skill". Do not write that notice as text. goal_skills_gate.py denies every other tool and blocks the stop until all six were loaded, so call them first, in one message.'
 context="$instr
 
 $context"
